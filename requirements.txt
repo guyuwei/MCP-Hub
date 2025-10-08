@@ -1,0 +1,38 @@
+# MCP Hub Requirements
+# ===================
+# Core dependencies for the MCP Hub orchestration script
+
+# Core MCP framework
+fastmcp>=0.1.0
+
+# Data Science / AI Research Mode
+ray>=2.8.0
+dask>=2023.12.0
+openai>=1.3.0
+
+# Engineering / Simulation Mode  
+# matlab>=1.0.0  # Uncomment if MATLAB is available
+
+# AI-assisted Writing Mode
+langchain>=0.1.0
+langgraph>=0.1.0
+
+# Experiment Management Mode
+fastapi>=0.104.0
+uvicorn>=0.24.0
+requests>=2.31.0
+
+# Cross-platform Notes / Literature Mode
+requests>=2.31.0
+
+# General utilities
+asyncio-mqtt>=0.13.0
+aiofiles>=23.2.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0

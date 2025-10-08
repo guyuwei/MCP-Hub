@@ -1,0 +1,51 @@
+{
+  "modes": {
+    "ai": {
+      "name": "Data Science / AI Research",
+      "tools": [
+        "ray",
+        "dask",
+        "openai"
+      ],
+      "description": "Ray + Dask + OpenAI MCP for AI research"
+    },
+    "engineering": {
+      "name": "Engineering / Simulation",
+      "tools": [
+        "simulink",
+        "python_interface"
+      ],
+      "description": "Simulink MCP + Python interface"
+    },
+    "writing": {
+      "name": "AI-assisted Writing",
+      "tools": [
+        "langchain",
+        "langgraph"
+      ],
+      "description": "LangChain + LangGraph MCP"
+    },
+    "experiment": {
+      "name": "Experiment Management",
+      "tools": [
+        "fastapi",
+        "github",
+        "shortcuts"
+      ],
+      "description": "FastAPI + GitHub API + Shortcuts"
+    },
+    "notes": {
+      "name": "Cross-platform Notes / Literature",
+      "tools": [
+        "obsidian",
+        "zotero"
+      ],
+      "description": "Obsidian MCP + Zotero API"
+    }
+  },
+  "settings": {
+    "log_level": "INFO",
+    "auto_reconnect": true,
+    "max_retries": 3
+  }
+}
