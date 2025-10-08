@@ -307,6 +307,9 @@ class MCPHub:
         print(f"\n🎯 MCP Hub is ready! Type 'help' for commands or 'quit' to exit.")
         print("=" * 60)
         
+        # 显示API使用示例
+        self.show_api_examples()
+        
         while True:
             try:
                 command = input("\nMCP> ").strip().lower()
@@ -319,6 +322,8 @@ class MCPHub:
                     self.show_status()
                 elif command == 'tools':
                     self.list_tools()
+                elif command == 'api':
+                    self.show_api_examples()
                 elif command.startswith('connect '):
                     tool_name = command.split(' ', 1)[1]
                     await self.connect_tool(tool_name)
@@ -336,12 +341,97 @@ class MCPHub:
             except Exception as e:
                 logger.error(f"Error in interactive mode: {e}")
     
+    def show_api_examples(self):
+        """Show API usage examples for connected tools"""
+        print("\n🚀 API使用示例:")
+        print("=" * 50)
+        
+        for tool_name, tool in self.tools.items():
+            if tool.status == "connected":
+                print(f"\n🔧 {tool.name} API:")
+                
+                if tool_name == "ray":
+                    print("  # 分布式计算示例")
+                    print("  import ray")
+                    print("  ray.init()")
+                    print("  ")
+                    print("  @ray.remote")
+                    print("  def process_data(data):")
+                    print("      return data * 2")
+                    print("  ")
+                    print("  futures = [process_data.remote(i) for i in range(10)]")
+                    print("  results = ray.get(futures)")
+                    print("  ray.shutdown()")
+                
+                elif tool_name == "dask":
+                    print("  # 大数据处理示例")
+                    print("  import dask.array as da")
+                    print("  ")
+                    print("  x = da.random.random((1000, 1000), chunks=(100, 100))")
+                    print("  result = (x + x.T).sum()")
+                    print("  result.compute()")
+                
+                elif tool_name == "openai":
+                    print("  # OpenAI API示例")
+                    print("  import openai")
+                    print("  ")
+                    print("  response = openai.ChatCompletion.create(")
+                    print("      model='gpt-3.5-turbo',")
+                    print("      messages=[{'role': 'user', 'content': 'Hello!'}]")
+                    print("  )")
+                    print("  print(response.choices[0].message.content)")
+                
+                elif tool_name == "langchain":
+                    print("  # LangChain API示例")
+                    print("  from langchain.llms import OpenAI")
+                    print("  from langchain.chains import LLMChain")
+                    print("  ")
+                    print("  llm = OpenAI(temperature=0.7)")
+                    print("  chain = LLMChain(llm=llm, prompt=prompt)")
+                    print("  result = chain.run('Hello World')")
+                
+                elif tool_name == "langgraph":
+                    print("  # LangGraph API示例")
+                    print("  from langgraph import StateGraph, END")
+                    print("  ")
+                    print("  workflow = StateGraph(WorkflowState)")
+                    print("  workflow.add_node('process', process_node)")
+                    print("  workflow.add_edge('process', END)")
+                    print("  app = workflow.compile()")
+                
+                elif tool_name == "fastapi":
+                    print("  # FastAPI示例")
+                    print("  from fastapi import FastAPI")
+                    print("  ")
+                    print("  app = FastAPI()")
+                    print("  ")
+                    print("  @app.get('/')")
+                    print("  async def root():")
+                    print("      return {'message': 'Hello World'}")
+                
+                elif tool_name == "obsidian":
+                    print("  # Obsidian笔记管理示例")
+                    print("  import os")
+                    print("  ")
+                    print("  def read_note(file_path):")
+                    print("      with open(file_path, 'r', encoding='utf-8') as f:")
+                    print("          return f.read()")
+                    print("  ")
+                    print("  def create_note(file_path, content):")
+                    print("      with open(file_path, 'w', encoding='utf-8') as f:")
+                    print("          f.write(content)")
+                
+                print()
+        
+        print("💡 提示: 输入 'help' 查看更多命令，输入 'quit' 退出")
+
     def show_help(self):
         """Show available commands"""
         print("\n📖 Available Commands:")
         print("  help                    - Show this help message")
         print("  status                  - Show hub and tool status")
         print("  tools                   - List all available tools")
+        print("  api                     - Show API usage examples")
         print("  connect <tool>          - Connect to a specific tool")
         print("  disconnect <tool>       - Disconnect from a specific tool")
         print("  restart                 - Restart the hub")
