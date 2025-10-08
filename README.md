@@ -7,6 +7,8 @@
 
 A standalone local MCP hub that connects and coordinates multiple Model Context Protocol tools. Works without Cursor - only requires Python and a terminal.
 
+> 📖 **新手用户必读**: [完整功能指南](COMPLETE_GUIDE.md) - 详细的使用说明和功能介绍
+
 ## 🚀 一键启动 (简单易用！)
 
 ### 🎯 最简单的方式

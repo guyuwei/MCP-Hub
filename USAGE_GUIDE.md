@@ -98,4 +98,10 @@ setup_env.bat
 4. **其他问题**：查看 `mcp_hub.log` 日志文件
 
 
+## 📚 更多文档
+
+- [完整功能指南](COMPLETE_GUIDE.md) - 详细的功能说明和使用教程
+- [快速参考卡片](QUICK_REFERENCE.md) - 常用命令和操作速查
+- [GitHub Issues](https://github.com/guyuwei/MCP-Hub/issues) - 问题反馈和讨论
+
 **有问题？** 访问 [GitHub Issues](https://github.com/guyuwei/MCP-Hub/issues) 提问
