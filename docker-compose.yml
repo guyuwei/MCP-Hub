@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  mcp-hub:
+    build: .
+    container_name: mcp-hub
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      # 在这里添加你的环境变量
+      # - OPENAI_API_KEY=your_key_here
+      # - OBSIDIAN_VAULT_PATH=/path/to/vault
+      # - GITHUB_TOKEN=your_token_here
+    volumes:
+      # 挂载日志目录
+      - ./logs:/app/logs
+      # 挂载配置文件
+      - ./config.json:/app/config.json
+    command: ["python", "mcp_hub.py", "--mode=ai"]
+    restart: unless-stopped
+
+  # AI研究模式
+  mcp-ai:
+    build: .
+    container_name: mcp-hub-ai
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./logs:/app/logs
+      - ./config.json:/app/config.json
+    command: ["python", "mcp_hub.py", "--mode=ai"]
+    profiles: ["ai"]
+
+  # 笔记模式
+  mcp-notes:
+    build: .
+    container_name: mcp-hub-notes
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./logs:/app/logs
+      - ./config.json:/app/config.json
+    command: ["python", "mcp_hub.py", "--mode=notes"]
+    profiles: ["notes"]
+
+  # 写作模式
+  mcp-writing:
+    build: .
+    container_name: mcp-hub-writing
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./logs:/app/logs
+      - ./config.json:/app/config.json
+    command: ["python", "mcp_hub.py", "--mode=writing"]
+    profiles: ["writing"]

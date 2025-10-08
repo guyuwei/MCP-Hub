@@ -1,27 +1,62 @@
 # MCP Hub - Standalone Model Context Protocol Orchestration
 
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-guyuwei%2FMCP--Hub-black.svg)](https://github.com/guyuwei/MCP-Hub)
+[![MCP](https://img.shields.io/badge/MCP-Protocol-orange.svg)](https://modelcontextprotocol.io)
+
 A standalone local MCP hub that connects and coordinates multiple Model Context Protocol tools. Works without Cursor - only requires Python and a terminal.
 
-## 🚀 Quick Start
+## 🚀 一键启动 (简单易用！)
 
-### Prerequisites
+### 🎯 最简单的方式
+
+**Linux/macOS:**
+```bash
+# 下载项目后，直接运行：
+./one_click.sh
+```
+
+**Windows:**
+```batch
+# 下载项目后，直接运行：
+install.bat
+# 然后运行：
+one_click.bat
+```
+
+**Docker (任何系统):**
+```bash
+# 简单易用，一条命令搞定！
+./docker_start.sh
+```
+
+### 🔧 传统安装方式
+
+**Prerequisites:**
 - Python 3.8 or higher
 - pip (Python package installer)
 
-### Installation
+**Installation:**
 
 1. **Clone or download this repository**
    ```bash
-   cd /path/to/MCP_Terminal
+   git clone https://github.com/guyuwei/MCP-Hub.git
+   cd MCP-Hub
    ```
 
-2. **Install dependencies**
+2. **一键安装 (推荐)**
+   ```bash
+   # Linux/macOS
+   ./install.sh
+   
+   # Windows
+   install.bat
+   ```
+
+3. **手动安装**
    ```bash
    pip install -r requirements.txt
-   ```
-
-3. **Run the MCP Hub**
-   ```bash
    python mcp_hub.py --mode=ai
    ```
 
