@@ -13,8 +13,8 @@ A standalone local MCP hub that connects and coordinates multiple Model Context 
 
 **Linux/macOS:**
 ```bash
-# 下载项目后，直接运行：
-./one_click.sh
+# 打开终端，输入以下命令：
+sudo ./one_click.sh
 ```
 
 **Windows:**
@@ -27,8 +27,8 @@ one_click.bat
 
 **Docker (任何系统):**
 ```bash
-# 简单易用，一条命令搞定！
-./docker_start.sh
+# 打开终端，输入以下命令：
+sudo ./docker_start.sh
 ```
 
 ### 🔧 传统安装方式
@@ -48,7 +48,7 @@ one_click.bat
 2. **一键安装 (推荐)**
    ```bash
    # Linux/macOS
-   ./install.sh
+   sudo ./install.sh
    
    # Windows
    install.bat
@@ -75,13 +75,13 @@ one_click.bat
 ### Basic Usage
 ```bash
 # Start AI research mode
-python mcp_hub.py --mode=ai
+sudo python mcp_hub.py --mode=ai
 
 # Start note-taking mode  
-python mcp_hub.py --mode=notes
+sudo python mcp_hub.py --mode=notes
 
 # Start writing mode
-python mcp_hub.py --mode=writing
+sudo python mcp_hub.py --mode=writing
 
 # Show help
 python mcp_hub.py --help
@@ -90,7 +90,7 @@ python mcp_hub.py --help
 ### Non-Interactive Mode
 ```bash
 # Connect tools and exit (no interactive shell)
-python mcp_hub.py --mode=ai --no-interactive
+sudo python mcp_hub.py --mode=ai --no-interactive
 ```
 
 ### Interactive Commands
@@ -150,7 +150,7 @@ The hub automatically creates a `config.json` file with default settings:
 ### Method 1: Terminal in PyCharm
 1. Open PyCharm and navigate to the project folder
 2. Open the terminal (View → Tool Windows → Terminal)
-3. Run: `python mcp_hub.py --mode=ai`
+3. Run: `sudo python mcp_hub.py --mode=ai`
 
 ### Method 2: Run Configuration
 1. Right-click on `mcp_hub.py` in the project tree
@@ -158,11 +158,13 @@ The hub automatically creates a `config.json` file with default settings:
 3. Add command line arguments in Run Configuration:
    - Program arguments: `--mode=ai`
    - Working directory: `/path/to/MCP_Terminal`
+   - Environment variables: Add `SUDO_USER` if needed
 
 ### Method 3: Debug Mode
 1. Set breakpoints in the code as needed
 2. Right-click on `mcp_hub.py` → "Debug 'mcp_hub'"
 3. Add arguments: `--mode=ai`
+4. Note: Debug mode may require sudo privileges
 
 ## 🔑 Environment Variables
 

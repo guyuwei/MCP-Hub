@@ -22,8 +22,8 @@ cd MCP-Hub
 ### Linux/macOS 用户
 
 ```bash
-# 简单易用，一条命令搞定！
-./one_click.sh
+# 打开终端，输入以下命令：
+sudo ./one_click.sh
 ```
 
 ### Windows 用户
@@ -59,9 +59,9 @@ one_click.bat
 ### Linux/macOS
 
 ```bash
-./start_ai.sh        # AI研究模式
-./start_notes.sh     # 笔记模式
-./start_writing.sh   # 写作模式
+sudo ./start_ai.sh        # AI研究模式
+sudo ./start_notes.sh     # 笔记模式
+sudo ./start_writing.sh   # 写作模式
 ```
 
 ### Windows
@@ -78,7 +78,7 @@ start_writing.bat    # 写作模式
 
 ```bash
 # Linux/macOS
-./setup_env.sh
+sudo ./setup_env.sh
 
 # Windows
 setup_env.bat
